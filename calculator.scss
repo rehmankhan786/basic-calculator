@@ -13,10 +13,25 @@ body {
 
 #calculator_box {
     border: 1px solid black;
-    height: 350px;
+    height: 400px;
     width: 300px;
     border-radius: 15px;
     background-color: black;
+    & #special {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        margin-top: 10px;
+        justify-content: center;
+        & .clear {
+            grid-template-columns: span 2;
+            width: 80%;
+            margin-left: 0px;
+            background-color: orange;
+        }
+        & .back {
+            margin-left: 22px;
+        }
+    }
     & #output {
         height: 9%;
         width: 100%;
@@ -44,6 +59,13 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: inset 1px 1px 8px rgb(114, 113, 113);
+            &:hover {
+                box-shadow: inset 1px 1px 15px rgb(185, 184, 184);
+            }
+            &:active {
+                background-color: rgb(190, 185, 185);
+            }
         }
     }
     & #display {

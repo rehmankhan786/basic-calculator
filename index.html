@@ -14,6 +14,13 @@
         <div id="output"></div>
         <form action="" name="calc" id="calculator_form">
             <input type="text" name="txt" id="display" autocomplete="Off">
+            <div id="special">
+
+
+                <span class="nums clear" onclick='document.calc.txt.value =0 '>c</span>
+                <span class="nums" onclick='document.calc.txt.value += "%" '>%</span>
+                <span class="nums back" onclick=poper() style="background: red;">&lt;=</span>
+            </div>
             <div id="numbers">
 
                 <span class="nums" onclick='document.calc.txt.value +=7 '>7</span>
@@ -46,12 +53,13 @@
             data = display.value;
             b = eval(data);
             output.innerHTML = b
-            display.value = 0
+            display.value = b
+        }
 
-
-
-
-
+        function poper() {
+            b = String(display.value)
+            b = display.value.slice(0, display.value.length - 1)
+            display.value = b
 
         }
     </script>
